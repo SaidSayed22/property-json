@@ -1,10 +1,17 @@
-const jsonServer = require("json-server"); // importing json-server library
+const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router("db.json");
+const router = jsonServer.router('data.json');  // تأكد أن ملف data.json موجود في نفس المجلد
 const middlewares = jsonServer.defaults();
-const port = process.env.PORT || 8080; //  chose port from here like 8080, 3001
 
 server.use(middlewares);
 server.use(router);
 
-server.listen(port);
+// إضافة سجل قبل بدء الاستماع
+console.log('Starting JSON Server...');
+
+server.listen(process.env.PORT || 5000, () => {
+    console.log('JSON Server is running on port 5000');
+  }).on('error', (err) => {
+    console.error('Error starting server:', err);
+  });
+  

@@ -2,15 +2,16 @@
   "name": "data-json",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node ./node_modules/.bin/json-server --watch data.json --port 5000"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
+  "devDependencies": {
     "json-server": "^1.0.0-beta.3"
   }
 }
